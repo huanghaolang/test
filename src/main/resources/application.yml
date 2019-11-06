@@ -1,0 +1,22 @@
+
+
+logging:
+  level:
+    com.ac: debug
+server:
+  port: 8888
+  servlet:
+    context-path: /demo
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@10.1.80.163:1521:DFE
+    username: ac
+    password: ac
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+mybatis-plus:
+  mapper-locations: classpath:com/ac/mapper/*.xml
+  type-aliases-package: com.ac.entity
+  global-config:
+    banner: true
+#debug: true
