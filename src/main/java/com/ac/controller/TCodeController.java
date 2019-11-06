@@ -100,6 +100,7 @@ public class TCodeController {
     @RequestMapping(method = RequestMethod.PUT)
     @ApiOperation(value="修改单个code")
     public Map updateCode() {
+        System.out.println("1");
         Map<String, Object> map = new HashMap<>();
         TCode tCode = getCode();
         boolean flag =  itCodeService.updateById(tCode);
