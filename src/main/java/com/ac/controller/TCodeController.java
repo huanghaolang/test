@@ -1,12 +1,14 @@
 package com.ac.controller;
 
 
+import com.ac.annotation.UserLoginToken;
 import com.ac.entity.TCode;
 import com.ac.service.ITCodeService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.sun.tools.javac.util.Convert;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,8 +43,9 @@ public class TCodeController {
         map.put("rows", list == null ? 0 : list.size());
         return map;
     }
+    @UserLoginToken
     @RequestMapping(value="/getCodeById",method = RequestMethod.GET)
-    @ApiOperation(value="根据id获取单个code")
+    @ApiOperation(value="根据id获取单个code", authorizations =@Authorization(value = "token"))
     public Map getCodeById() {
         System.out.println("这是getCodes的方法");
         Map<String, Object> map = new HashMap<>();
@@ -54,6 +57,7 @@ public class TCodeController {
         map.put("rows", tcode == null ? 0 : 1);
         return map;
     }
+    @UserLoginToken
     @RequestMapping(method = RequestMethod.POST)
     @ApiOperation(value="添加单个code")
     public Map insertCode() {
@@ -66,7 +70,7 @@ public class TCodeController {
 
     @RequestMapping(value ="/batchSave",method = RequestMethod.POST)
     @ApiOperation(value="批量添加code")
-    public Map insertCodes() {
+    public Map batchSave() {
         Map<String, Object> map = new HashMap<>();
         List<TCode> list = getCodeList();
         boolean flag =  itCodeService.saveOrUpdateBatch(list);
@@ -119,4 +123,5 @@ public class TCodeController {
         map.put("flag", flag);
         return map;
     }
+
 }

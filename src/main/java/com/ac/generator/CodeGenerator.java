@@ -49,7 +49,7 @@ public class CodeGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         File file = new File("");
-        String projectPath = file.getCanonicalPath()+"/java/demo";
+        String projectPath = file.getCanonicalPath();
         //String projectPath = System.getProperty("user.dir");
         System.out.println(projectPath);
         gc.setOutputDir(projectPath + "/src/main/java");
