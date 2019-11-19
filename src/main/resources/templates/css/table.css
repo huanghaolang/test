@@ -1,0 +1,77 @@
+table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #DDD;
+            width: 345px;
+            height: 480px;
+            table-layout: fixed;
+        }
+        thead tr {
+            display: block;
+            background-color: #f4fbfe;
+            color: #44abe5;
+        }
+        table th {
+            border-bottom: 1px solid #CCC;
+            border-left: none;
+            border-right: 1px solid #CCC;
+            border-top: none;
+            color: #44abe5;
+            padding: 0 4px;
+            width: 100px;
+            min-width: 100px;
+            max-width: 100px;
+            height: 16px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        tbody {
+            display: block;
+            height: 262px;
+            width: 345px;
+            overflow-y: auto;
+        }
+        tbody td {
+            width: 100px;
+            min-width: 100px;
+            max-width: 100px;
+            height: 16px;
+            border-bottom: 1px solid #DDD;
+            border-left: none;
+            border-right: 1px solid #CCC;
+            border-top: none;
+            color: #404060;
+            padding: 0 4px;
+            font-size: 12px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .selectedTbodyTr {
+            background-color: #ffffff;
+            height: 16px;
+            padding: 0 4px;
+        }
+        .selectedTbodyTr:hover {
+            background-color: #f0f0f0;
+            height: 16px;
+            padding: 0 4px;
+        }
+        .selected {
+            background-color: #dbecf9;
+        }
+        .table-div {
+            width: 345px;
+            height: 283px;
+            border-bottom: 1px solid #CCC;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        .labelTitle {
+            color: #349FD3;
+            font-size: 14px;
+            font-weight: 800;
+        }

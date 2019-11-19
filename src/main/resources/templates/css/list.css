@@ -1,0 +1,47 @@
+#example1_filter input [type="search"]{
+    width: 400px;
+    height: 30px;
+}
+div.dataTables_wrapper div.dataTables_filter{/*text-align:right*/}
+div.dataTables_wrapper div.dataTables_filter input [type="search"]{margin-left:0.5em;display:inline-block;width:240px;}
+.main-sidebar{
+	position:absolute;top:0;left:0;
+	padding-top:50px;
+	min-height:100%;width:230px;z-index:810;
+	-webkit-transition:-webkit-transform .3s ease-in-out,width .3s ease-in-out;
+	-moz-transition:-moz-transform .3s ease-in-out,width .3s ease-in-out;
+	-o-transition:-o-transform .3s ease-in-out,width .3s ease-in-out;
+	transition:transform .3s ease-in-out,width .3s ease-in-out
+	}
+.f_submit{
+ color: #3c8dbc;text-decoration: none;background-color: transparent;
+ box-sizing: border-box;line-height: 1.42857143;border:none;
+ }
+ @media (min-width:768px){.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9{float:right}
+ 
+ div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    float: right; 
+}
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+    float: left;
+}
+#example1_wrapper .col-sm-5{
+	float: left;
+	
+}
+#example1_wrapper .col-sm-7{
+	float: right;
+	
+}
+#example1_paginate{
+	float: right;
+	
+}
+ 
+ 
