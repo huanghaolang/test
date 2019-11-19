@@ -34,5 +34,5 @@ token:
     sub: test
     aud: webSwagger
 
-#debug: true
+debug: true
 
