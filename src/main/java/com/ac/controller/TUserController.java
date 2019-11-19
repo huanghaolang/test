@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * <p>
@@ -61,5 +62,6 @@ public class TUserController {
 
         return "你已通过验证";
     }
+
 
 }

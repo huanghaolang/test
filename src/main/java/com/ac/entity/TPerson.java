@@ -2,9 +2,10 @@ package com.ac.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+import java.util.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -173,13 +174,13 @@ public class TPerson implements Serializable {
     private String personType;
 
     @TableField("CRT_DATE")
-    private LocalDateTime crtDate;
+    private Date crtDate;
 
     @TableField("CRT_BY")
     private String crtBy;
 
     @TableField("UPD_DATE")
-    private LocalDateTime updDate;
+    private Date updDate;
 
     @TableField("UPD_BY")
     private String updBy;

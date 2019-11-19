@@ -11,6 +11,11 @@ spring:
     username: ac
     password: ac
     driver-class-name: oracle.jdbc.driver.OracleDriver
+  thymeleaf:
+    cache: false
+  resources:
+    static-locations: classpath:/templates/
+
 
 mybatis-plus:
   mapper-locations: classpath:com/ac/mapper/*.xml
@@ -28,4 +33,6 @@ token:
     iss: test
     sub: test
     aud: webSwagger
+
 #debug: true
+

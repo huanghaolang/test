@@ -11,9 +11,13 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 /**
@@ -104,7 +108,6 @@ public class TCodeController {
     @RequestMapping(method = RequestMethod.PUT)
     @ApiOperation(value="修改单个code")
     public Map updateCode() {
-        System.out.println("1");
         Map<String, Object> map = new HashMap<>();
         TCode tCode = getCode();
         boolean flag =  itCodeService.updateById(tCode);
@@ -123,5 +126,18 @@ public class TCodeController {
         map.put("flag", flag);
         return map;
     }
+
+    /****************************************************************************/
+    @RequestMapping(value = "/getCodesBycdCls")
+    public  List<TCode> getCodesBycdCls(TCode code, HttpServletResponse response) throws IOException {
+        List<TCode> codeList=null;
+        try {
+            codeList = itCodeService.list(new QueryWrapper<TCode>().eq("CD_CLS",code.getCdCls()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return codeList;
+    }
+
 
 }

@@ -1,0 +1,177 @@
+.panel {
+	padding: 20px;
+	margin: 5px auto;
+}
+
+.panel-query {
+	/* margin-top:20px; */
+	background: #f6f6f6;
+	padding: 15px;
+	height: 140px;
+}
+.panel-query2 {
+	/* margin-top:20px; */
+	background: #f6f6f6;
+	padding: 15px;
+	height: 90px;
+}
+
+.panel-query button{
+	width: 100px;
+	height: 30px;
+}
+.panel-query>.form-control {
+	/* width: 200px;float: left; */
+	
+}
+
+.col-xs-3 .col-xs-2 {
+	width: auto;
+}
+
+.panel-group {
+	margin: 0px auto;
+}
+
+.panel-group select {
+	height: 26px;
+}
+
+.panel-table {
+	width: 570px;
+	height: 600px;
+	float: left;
+	overflow: auto;
+}
+
+.panel-table-move {
+	width: 120px;
+	height: 600px;
+	float: left;
+}
+
+.panel-search-text {
+	width: 265px;
+}
+
+.panel-search-btn {
+	width: 120px;
+}
+
+input::-ms-input-placeholder {
+	text-align: center;
+}
+
+input::-webkit-input-placeholder {
+	text-align: center;
+}
+
+.div-getData {
+	border: 0;
+	margin: 5px;
+	height: 40px;
+}
+
+.div-getData input {
+	width: 250px;
+	height: 30px;
+	float: left;
+}
+
+.div-getData label {
+	float: left;
+	margin: 0 10px;
+}
+
+.box-body-Detail {
+	overflow: auto;
+	padding: 10px;
+	height: 575px;
+	width: 550px;
+}
+
+.f_submit {
+	color: #3c8dbc;
+	text-decoration: none;
+	background-color: transparent;
+	box-sizing: border-box;
+	line-height: 1.5;
+	border: none;
+}
+
+.complie {
+	margin-right: 10px;
+}
+.reset {
+	margin-left: 10px;
+}
+.downloadAuth {
+	margin-right: 10px;
+}
+.faceAndCardManage{
+	margin-right: 10px;
+}
+.btn-primary {
+	width: 100px;
+	height: 30px;
+}
+.queryData {
+	margin: 20px;
+	width: 100px;
+	height: 30px;
+}
+.col-xs-3 {
+    width: auto;
+}
+.form-group {
+    margin-bottom: auto;
+}
+.calcscrollin {
+    width: 100%;
+    height: 200px;
+}
+.calcscrollout{   
+    top: 0;
+    left: 0;    
+    width: 200px;
+    height: 150px; 
+    overflow: scroll;
+}
+.calcscrollout::-webkit-scrollbar,.fixed-table-body::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
+    background: #fff;
+}
+.calcscrollout::-webkit-scrollbar-track,.fixed-table-body::-webkit-scrollbar-track{
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-right: 4px;
+}
+.calcscrollout::-webkit-scrollbar-thumb,.fixed-table-body::-webkit-scrollbar-thumb{
+    height: 7px;
+    border: 1px solid #ccc;
+    background-color: #e5e5e5;
+}
+    ::-webkit-scrollbar {
+        width:12px;
+        background-color: aqua;
+        }
+
+        /* ¹ö¶¯²Û */
+        ::-webkit-scrollbar-track {
+        border-radius:10px;
+        }
+
+        /* ¹ö¶¯Ìõ»¬¿é */
+        ::-webkit-scrollbar-thumb {
+        border-radius:10px;
+        background:#00ffff;
+        }
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #00ffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5a76cd;
+}
