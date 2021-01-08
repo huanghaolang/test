@@ -18,4 +18,5 @@ public interface ITPersonService extends IService<TPerson> {
 
     public Map<String,Object> personPage(Page iPage,TPerson person);
 
+    public  void savePerson() throws Exception;
 }

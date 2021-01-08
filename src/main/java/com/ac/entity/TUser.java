@@ -52,6 +52,10 @@ public class TUser implements Serializable {
     @TableField("USER_DESC")
     private String userDesc;
 
+    @ApiModelProperty(value = "角色Id")
+    @TableField("ROLEID")
+    private String roleId;
+
     @TableField("CRT_DATE")
     private Date crtDate;
 

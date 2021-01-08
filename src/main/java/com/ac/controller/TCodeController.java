@@ -5,19 +5,16 @@ import com.ac.annotation.UserLoginToken;
 import com.ac.entity.TCode;
 import com.ac.service.ITCodeService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.sun.tools.javac.util.Convert;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.*;
 
 /**

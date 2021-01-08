@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link href="/demo/images/title.ico" rel="icon" type="image/x-ico" class="fa-gear">
+<script src="/demo/js/jquery.min.js"></script>  
+
+ <style>
+	body {
+    margin: 0;
+    padding: 0;
+    /* background: url(/demo/images/login.jpg) center no-repeat fixed;   */
+    background-size: 1000px 600px;
+}
+
+*, :after, :before, legend {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-logo a .logo {
+    display: inline-block;
+    width: 200px;
+    height: 65px;
+    margin: 27px 0 35px 130px;
+    font-size: 0;
+    background: url(../img/logo.png) no-repeat;
+    background-size: 100%;
+}
+
+.login-box {
+    /*width: 435px;*/
+    width: 470px;
+    /* padding:0 30px 35px 30px;*/
+    padding: 0 0 35px 0;
+    color: #666;
+    border-radius: 4px;
+    background: rgb(245,245,245);
+    /*box-shadow: 1px 1px 4px #767676;*/
+    margin: 135px auto 175px auto;
+    position: relative;
+}
+
+.login-title {
+    width: 100%;
+    height: 62px;
+    line-height: 62px;
+    margin-bottom: 35px;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #FFF;
+    background:2a58a0;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#367fa9), to(#d367fa9));
+    background: -webkit-linear-gradient(top, #367fa9, #367fa9);
+    background: -moz-linear-gradient(top, #e9580a, #dc3d0a);
+    background: -o-linear-gradient(top, #e9580a, #dc3d0a);
+    background: -ms-linear-gradient(top, #e9580a, #dc3d0a);
+    background: linear-gradient(top, #e9580a, #dc3d0a);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = #e9580a, endColorstr = #dc3d0a);
+    text-align: center;
+}
+
+.login-form {
+    width: 330px;
+    margin-right: 52px;
+    /* margin-left: 38px;*/
+    margin-left: 66px;
+}
+
+.form-item {
+    width: 100%;
+    height: 48px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.user,.pass {
+    margin-bottom: 33px;
+}
+
+.form-tips {
+    width: 100%;
+    line-height: 16px;
+    font-size: 12px;
+    color: #e35b5a;
+    position: absolute;
+    top: 100%;
+}
+
+input {
+    width: 100%;
+}
+
+input:not([type=button]) {
+    height: 48px;
+    /*line-height: 22px;*/
+    padding: 12px 20px;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    /*color: #000;*/
+    /*#dce4e6*/
+    border: 1px solid #a5aaab;
+    border-radius: 3px;
+    outline: 0;
+    font-size: 16px;
+    /*f3f6f8*/
+    background: #fff;
+}
+
+.box {
+    height: 25px;
+}
+
+.box .rememb {
+    width: 72%;
+    height: 25px;
+    float: left;
+}
+
+.checkbox-group input {
+    display: none;
+    opacity: 0;
+}
+
+.checkbox-group input[type=checkbox]+label {
+    line-height: 1;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.checkbox-group input[type=checkbox]:checked+label:before {
+    content: '\2713';
+    background-color: #e35004;
+    /*background-color:  #006699;*/
+}
+
+.checkbox-group input[type=checkbox]:checked+label:before, .checkbox-group input[type=radio]:checked+label:before {
+    text-align: center;
+    color: #fff;
+    border-color: #e35004;
+    /*border-color: #006699;*/
+}
+
+.checkbox-group input[type=checkbox]+label:before {
+    border-radius: 3px;
+}
+
+.checkbox-group input[type=checkbox]+label:before, .checkbox-group input[type=radio]+label:before {
+    line-height: 1;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    content: '';
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    color: #fff;
+    border: 1px solid #dce4e6;
+    background-color: #f3f6f8;
+}
+
+.box-fr {
+    width: 27%;
+    height: 25px;
+    float: right;
+}
+
+.box-fr .btn-link {
+    padding: 0;
+    color: #e35004;
+    /*color:  #006699;*/
+    border: none;
+    border-radius: 0;
+}
+
+.btn a.block, .btn.block {
+    display: block;
+    width: 100%;
+}
+
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button;
+}
+
+.form-button .btn-green {
+    color: #fff;
+    /* background: #e35004; */
+    background: #006699;
+}
+
+.form-button .btn, .btn a {
+    font-size: 22px;
+    padding: 6px 19px;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    outline: 0;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 16px;
+}
+
+input::-ms-input-placeholder {
+    font-size: 16px;
+    color: #666;
+}
+</style>
+	<script type="text/javascript">
+
+		$(function(){
+			if (window != top) {
+				top.location.href = location.href;
+			}
+		})
+	</script>
+<script type="text/javascript">
+	function login() {
+		$("#user_error").hide();
+		$("#pass_error").hide();
+		var userId = document.getElementById("userId");
+		var pass = document.getElementById("userPwd");
+
+		if (userId.value == "") {
+
+			$("#user_error").show();
+			return false;
+
+		} else if (pass.value == "") {
+			$("#pass_error").show();
+			return false;
+
+		} else {
+
+			return true;
+
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="login-box" >
+		<div class="login-title">权限管控平台V1.0</div>
+		<div class="login-form">
+			<form action="user/checkLogin" id="form" onsubmit="return login()" 
+				method="post">
+				<!--账户名-->
+				<div class="form-item user">
+					<div class="form-ctrl">
+						<input type="text" id="userId" name="userId" placeholder="用户名"
+							style="vertical-align: top">
+					</div>
+					<div class="form-tips">
+						<span class="error" id="user_error" style="display: none;">用户名不能为空</span>
+					</div>
+				</div>
+				<!--密码-->
+				<div class="form-item pass">
+					<div class="form-ctrl">
+						<input type="password" id="userPwd" name="userPwd"
+							placeholder="请输入密码">
+					</div>
+					<div class="form-tips">
+						<span class="error" id="pass_error" style="display: none;">密码不能为空</span>
+					</div>
+				</div>
+				<!--登录按钮-->
+				<div class="form-item form-button">
+					<input type="submit" class="btn btn-green block btn-login"
+						value="登录" />
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+</body>
+</html> 	

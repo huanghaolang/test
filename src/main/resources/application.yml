@@ -18,15 +18,18 @@ spring:
 
 
 mybatis-plus:
-  mapper-locations: classpath:com/ac/mapper/*.xml
+  mapper-locations: classpath:com/ac/mapper/*.xml,classpath:com/ac/ext/mapper/*.xml
   type-aliases-package: com.ac.entity
   global-config:
     banner: true
+  configuration:
+    cache-enabled: true
+    local-cache-scope: statement
 
 token:
     id: 1
     password: 2
-    interval: 5
+    interval: 30
     headerClaims:
       alg: HS256
       typ: JWT
@@ -34,5 +37,5 @@ token:
     sub: test
     aud: webSwagger
 
-debug: true
+#debug: true
 

@@ -1,5 +1,6 @@
 package com.ac;
 
+import com.ac.entity.TUser;
 import com.ac.entity.Token;
 import com.ac.jwtToken.TokenUtil;
 import com.auth0.jwt.JWT;
@@ -12,6 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @SpringBootTest
@@ -24,9 +28,26 @@ class AcmsApplicationTests {
     private TokenUtil tokenUtil;
 
     @Test
+    public void test3() throws ParseException {
+        String a = "2018-05-15T24:59:59";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        Date parse = simpleDateFormat.parse(a);
+        System.out.println(parse.toString());
+        //Wed May 16 00:59:59 CST 2018
+        //Wed May 16 00:59:59 CST 2018
+        //Wed May 16 00:59:59 CST 2018
+    }
+
+    @Test
     public void token() throws Exception{
-       String tk= tokenUtil.getFinalToken();
+        TUser user=new TUser();
+        user.setUserId("11");
+        user.setUserPwd(null);
+        user.setRoleId(null);
+        //String tk= tokenUtil.getToken(user);
+        String tk=tokenUtil.getFinalToken(user);
         Map<String, Claim> claims = tokenUtil.verifyToken(tk);
+        System.out.println(claims.get("userId").asString());
        //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0IiwiaXNzIjoidGVzdCIsImV4cCI6MTU3MzExNTA2MX0.svXBJOwMnGk_WLUO9T5WSFthDOhAwnrUzTum6CbCrgI
        //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0IiwiaXNzIjoidGVzdCIsImV4cCI6MTU3MzExNDY4NH0.GcNCODIEosC6a-yo68HeML0OiDijjruPq6qLYZRuaRw
        // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0IiwiaXNzIjoidGVzdCIsImlkIjoiMSIsImV4cCI6MTU3MzExNDE1NH0.fKkM9pXSbC59PRU9xCWUcnWGR6U_eONSK0HnI7ZHutY

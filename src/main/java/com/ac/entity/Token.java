@@ -30,6 +30,7 @@ public class Token {
     private String id;
     private String password;
     private int interval;
+    private String roleId;
 
     /*
      *  签名

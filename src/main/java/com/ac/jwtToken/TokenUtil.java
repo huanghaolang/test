@@ -25,14 +25,15 @@ public class TokenUtil {
     public static String getToken(TUser user) {
         String token="";
         token= JWT.create().withAudience(user.getUserId())
+                .withClaim("roleId",user.getRoleId())
                 .sign(Algorithm.HMAC256(user.getUserPwd()));
+
         return token;
     }
 
-    public  String getFinalToken() {
+    public  String getFinalToken(TUser user) {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println(token.getInterval());
         Calendar calendar = Calendar.getInstance();
         calendar.add(calendarField,token.getInterval());
         Date startDate=calendar.getTime();
@@ -41,7 +42,9 @@ public class TokenUtil {
                 .withHeader(token.getHeaderClaims())
                 .withIssuer(token.getIss())
                 .withExpiresAt(startDate)
-                .withClaim("id",token.getId())
+                .withClaim("userId",user.getUserId())
+                .withClaim("userPwd",user.getUserPwd())
+                .withClaim("roleId",user.getRoleId())
                 .withSubject(token.getSub())
                 .sign(Algorithm.HMAC256(token.getPassword()));
         return tokenStr;
@@ -54,11 +57,9 @@ public class TokenUtil {
         } catch (Exception e) {
              e.printStackTrace();
             // token 校验失败, 抛出Token验证非法异常
-            throw new RuntimeException("校验失败,非法异常");
+            throw new RuntimeException("token不存在或已过期");
         }
         return jwt.getClaims();
     }
-
-
 
 }

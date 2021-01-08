@@ -1,12 +1,12 @@
 package com.ac.controller;
 
 
-import com.ac.entity.Page;
 import com.ac.entity.TPerson;
 import com.ac.service.ITPersonService;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
@@ -42,15 +43,13 @@ public class TPersonController {
 
 
     @RequestMapping(value = "/getPersonListPage",method = RequestMethod.POST)
-    public Map<String, Object> getPersonListPage(TPerson person, Page iPage, String exportCode, HttpServletResponse response)
+    public Map<String, Object> getPersonListPage(TPerson person, Page page, HttpServletResponse response, HttpServletRequest request)
             throws IOException {
         response.setContentType("text/html;charset=utf-8");
+        System.out.println(request.getHeader("Origin"));
+        response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
         Map<String, Object> map = new HashMap<String, Object>();
         try {
-            int current = iPage.getOffset()/iPage.getLimit()+1;
-
-            com.baomidou.mybatisplus.extension.plugins.pagination.Page<TPerson> page =
-                    new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(current, iPage.getLimit());
             IPage<TPerson> personPage = itPersonService.page(page, new QueryWrapper<TPerson>().like("name", "黄"));
             assertThat(page).isSameAs(personPage);
 

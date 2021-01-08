@@ -75,7 +75,7 @@ public class CodeGenerator {
                         return DbColumnType.INTEGER;
                     }else if(fieldType.equals("NUMBER")){
 
-                       // return DbColumnType.INTEGER;
+                        return DbColumnType.INTEGER;
                     }
                     return (DbColumnType) super.processTypeConvert(globalConfig,fieldType);
             }
@@ -88,6 +88,7 @@ public class CodeGenerator {
         pc.setModuleName(null);
         pc.setParent("com.ac");
         pc.setMapper("dao");
+        pc.setEntity("entity2");
         //pc.setXml("mappper2");
         //pc.setPathInfo();
         mpg.setPackageInfo(pc);

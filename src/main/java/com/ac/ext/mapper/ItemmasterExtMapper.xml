@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ac.ext.dao.ItemmasterExtMapper">
+
+
+    <select id="getTableColumnById"  resultMap="ItemmasterExtBase">
+        select * from ITEMMASTER t
+        where t.tableId = #{tableId}
+        order by t.displaynumber
+
+    </select>
+    <resultMap id="ItemmasterExtBase" type="com.ac.ext.entity.ItemmasterExt">
+       <!-- <id column="tableid" property="tableid" jdbcType="VARCHAR"></id>
+        <result column="ITEMNAME" property="itemname"></result>
+        <result column="DBKEY" property="dbkey"></result>
+        <result column="DISPLAYNUMBER" property="displaynumber"></result>
+        <result column="DISPLAYNAME" property="displayname"></result>-->
+        <!--<result column="ITEMTYPE" property="multiselectid"></result>
+        <result column="ITEMINPUTTYPE" property="multiselectid"></result>
+        <result column="ITEMFORMAT" property="multiselectid"></result>
+        <result column="ITEMLENGTH" property="multiselectid"></result>
+        <result column="ITEMMIN" property="multiselectid"></result>
+        <result column="ITEMMAX" property="multiselectid"></result>
+        <result column="SHOWCOLUMN" property="multiselectid"></result>
+        <result column="ITEMWIDTH" property="multiselectid"></result>
+        <result column="SENDREQUIRED" property="multiselectid"></result>
+        <result column="EXCELFLAG" property="multiselectid"></result>
+        <result column="MULTISELECTID" property="multiselectid"></result>
+        <result column="PLACEHOLDER" property="multiselectid"></result>-->
+
+       <!-- <result column="CRT_DATE" property="crtDate"></result>
+        <result column="CRT_BY" property="crtBy"></result>
+        <result column="UPD_DATE" property="updDate"></result>
+        <result column="UPD_BY" property="updBy"></result>-->
+
+         <collection property="multiselects" select="com.ac.dao.ItemmasterMultiselectMapper.getMultiSelect" column="{tableid=tableid,multiselectid=multiselectid }">
+           <!-- <id column="UUID" property="uuid"></id>
+            <result column="TABLEID" property="tableid"></result>
+            <result column="MULTISELECTID" property="multiselectid"></result>
+            <result column="ITEMKEY" property="itemkey"></result>
+            <result column="ITEMVALUE" property="itemvalue"></result>
+            <result column="CRT_DATE" property="crtDate"></result>
+            <result column="CRT_BY" property="crtBy"></result>
+            <result column="UPD_DATE" property="updDate"></result>
+            <result column="UPD_BY" property="updBy"></result>-->
+        </collection>
+    </resultMap>
+</mapper>
